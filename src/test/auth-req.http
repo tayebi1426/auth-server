@@ -1,0 +1,27 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST http://127.0.0.1:8081/oauth/token
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ= //Basic Base64.encode(client_id+":"+client_secret)
+
+grant_type=password&username=john&password=123
+
+###
+POST http://127.0.0.1:8081/oauth/check_token
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ= //Basic Base64.encode(client_id+":"+client_secret)
+
+token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Njc4MzcxNzUsInVzZXJfbmFtZSI6ImpvaG4iLCJhdXRob3JpdGllcyI6WyJST0xFX0VIUl9FWFBFUlQiLCJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6ImU3NGRkNDA5LTVhNzUtNDJkNS1hNDJkLTkwOTRmMWU0ZDdmMCIsImNsaWVudF9pZCI6ImNsaWVudF9pZCIsInNjb3BlIjpbInVzZXJfaW5mbyJdfQ.bJDgRdW3oe-Fezc_3t-8kp0nqmz_ggFSBkrYyz1zB70
+
+###
+
+GET http://127.0.0.1:8081/user/me
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Njc4MzcxNzUsInVzZXJfbmFtZSI6ImpvaG4iLCJhdXRob3JpdGllcyI6WyJST0xFX0VIUl9FWFBFUlQiLCJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6ImU3NGRkNDA5LTVhNzUtNDJkNS1hNDJkLTkwOTRmMWU0ZDdmMCIsImNsaWVudF9pZCI6ImNsaWVudF9pZCIsInNjb3BlIjpbInVzZXJfaW5mbyJdfQ.bJDgRdW3oe-Fezc_3t-8kp0nqmz_ggFSBkrYyz1zB70
+
+###
