@@ -8,7 +8,7 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ir.demisco.cloud.core</groupId>
+    <groupId>ir.demisco.cloud</groupId>
     <artifactId>auth-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>auth-server</name>
@@ -17,6 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <DOCKER_HOST>http://192.168.25.127:2375</DOCKER_HOST>
     </properties>
 
     <dependencies>
@@ -75,6 +76,19 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.10</version>
+                <configuration>
+
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                    <repository>${project.groupId}/${project.artifactId}</repository>
+                </configuration>
             </plugin>
         </plugins>
     </build>
