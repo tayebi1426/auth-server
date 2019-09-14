@@ -3,3 +3,19 @@ server:
 logging:
    level:
      org.springframework: debug
+
+spring:
+  datasource:
+   url: jdbc:oracle:thin:@192.168.25.20:1521/hmsdb.istd.com
+   username: edm
+   password: edm123
+   driver-class-name: oracle.jdbc.OracleDriver
+   validation-query: SELECT 1 FROM dual
+
+
+
+
+
+
+
+
